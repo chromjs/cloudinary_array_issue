@@ -3,5 +3,13 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "cloudinary_array",
   },
-  plugins: ["gatsby-plugin-netlify-cms"],
+  plugins: [
+    "gatsby-plugin-netlify-cms", 
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+  ],
 };

@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: #REPLACE-THIS
+    api_key: #REPLACE-THIS
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "items"
+    editor:
+      preview: false
+    label: "items"
+    folder: "content/items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - label: "multiple images"
+        name: "images"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
+      
